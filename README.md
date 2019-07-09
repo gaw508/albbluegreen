@@ -1,5 +1,7 @@
 ## ALB Blue Green Deployment Tool
 
+[![Build Status](https://travis-ci.org/gaw508/albbluegreen.svg?branch=master)](https://travis-ci.org/gaw508/albbluegreen)
+
 A tool for managing blue green deployments using AWS ALB (ELBv2).
 
 It relies on having a single load balancer, with 2 target groups,
