@@ -11,19 +11,19 @@ func TestInvertStatus(t *testing.T) {
 		expectedStatus BlueGreenStatus
 	}{
 		"blue -> green": {
-			status: "blue",
+			status:         "blue",
 			expectedStatus: "green",
 		},
 		"green -> blue": {
-			status: "green",
+			status:         "green",
 			expectedStatus: "blue",
 		},
 		"defaults to blue": {
-			status: "notacolour",
+			status:         "notacolour",
 			expectedStatus: "blue",
 		},
 		"defaults to blue (empty)": {
-			status: "",
+			status:         "",
 			expectedStatus: "blue",
 		},
 	}

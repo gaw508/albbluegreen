@@ -11,7 +11,7 @@ type BlueGreenService struct {
 	SetStatusFn      func(status albbluegreen.BlueGreenStatus) error
 	SetStatusInvoked bool
 
-	ToggleFn func() (newStatus albbluegreen.BlueGreenStatus, err error)
+	ToggleFn      func() (newStatus albbluegreen.BlueGreenStatus, err error)
 	ToggleInvoked bool
 }
 
