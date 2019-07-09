@@ -4,9 +4,10 @@ import (
 	"fmt"
 	"github.com/gaw508/albbluegreen"
 	"github.com/urfave/cli"
+	"log"
 )
 
-func SetStatusHandler(blueGreenService albbluegreen.BlueGreenService) cli.ActionFunc {
+func SetStatusHandler(log *log.Logger, blueGreenService albbluegreen.BlueGreenService) cli.ActionFunc {
 	return func(c *cli.Context) error {
 		status := c.String("status")
 		if status == "" {
@@ -17,7 +18,7 @@ func SetStatusHandler(blueGreenService albbluegreen.BlueGreenService) cli.Action
 		if err != nil {
 			return cli.NewExitError(fmt.Sprintf("Failed to set status: %+v", err), 1)
 		}
-		fmt.Printf("Successfully set service to: %s\n", status)
+		log.Printf("Successfully set service to: %s\n", status)
 		return nil
 	}
 }

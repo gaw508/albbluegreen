@@ -37,6 +37,7 @@ func main() {
 		},
 	}
 
+	logger := log.New(os.Stdout, "", 0)
 	bgService := &bgaws.BlueGreenService{}
 	app.Before = func(c *cli.Context) error {
 		var region *string
@@ -63,19 +64,19 @@ func main() {
 			Name:    "toggle",
 			Aliases: []string{"t"},
 			Usage:   "toggle the active target group for blue green deployment",
-			Action:  bgcli.ToggleHandler(bgService),
+			Action:  bgcli.ToggleHandler(logger, bgService),
 		},
 		{
 			Name:    "get-status",
 			Aliases: []string{"g"},
 			Usage:   "get the active target group for blue green deployment",
-			Action:  bgcli.GetStatusHandler(bgService),
+			Action:  bgcli.GetStatusHandler(logger, bgService),
 		},
 		{
 			Name:    "set-status",
 			Aliases: []string{"s"},
 			Usage:   "set the active target group for blue green deployment",
-			Action:  bgcli.SetStatusHandler(bgService),
+			Action:  bgcli.SetStatusHandler(logger, bgService),
 			Flags: []cli.Flag{
 				cli.StringFlag{
 					Name:  "status",
