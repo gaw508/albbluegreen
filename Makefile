@@ -7,4 +7,7 @@ fmt:
 vet:
 	bash -c 'diff -u <(echo -n) <(go vet ./...)'
 
-test-all: fmt vet test
+mod:
+	go mod download
+
+test-all: mod fmt vet test
