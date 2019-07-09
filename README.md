@@ -20,14 +20,14 @@ the rule between these two regex.
 
 ```
 # build the tool
-go build -o albbluegreen cmd/albbluegreen/main.go
+go get -u github.com/gaw508/albbluegreen/cmd/albbluegreen
 
 # get current status
-./albbluegreen --rule-arn=[RULE_ARN] --aws-profile=[AWS_PROFILE] --aws-region=[AWS_REGION] get-status
+albbluegreen --rule-arn=[RULE_ARN] --aws-profile=[AWS_PROFILE] --aws-region=[AWS_REGION] get-status
 
 # set status
-./albbluegreen --rule-arn=[RULE_ARN] --aws-profile=[AWS_PROFILE] --aws-region=[AWS_REGION] set-status --status=blue
+albbluegreen --rule-arn=[RULE_ARN] --aws-profile=[AWS_PROFILE] --aws-region=[AWS_REGION] set-status --status=blue
 
 # toggle status (blue -> green OR green -> blue)
-./albbluegreen --rule-arn=[RULE_ARN] --aws-profile=[AWS_PROFILE] --aws-region=[AWS_REGION] toggle
+albbluegreen --rule-arn=[RULE_ARN] --aws-profile=[AWS_PROFILE] --aws-region=[AWS_REGION] toggle
 ```
