@@ -20,7 +20,7 @@ the rule between these two regex.
 
 ```
 # build the tool
-go build -o albbluegreen
+go build -o albbluegreen cmd/albbluegreen/main.go
 
 # get current status
 ./albbluegreen --rule-arn=[RULE_ARN] --aws-profile=[AWS_PROFILE] --aws-region=[AWS_REGION] get-status
